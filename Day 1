@@ -1,0 +1,57 @@
+#include <iostream>
+#define max 5
+int top =-1;
+int strr[max];
+
+
+using namespace std;
+ void push(int x)
+ {
+     
+    if(top==max-1)
+    {
+        cout<<"stack is overflow:"<<endl;
+    }
+    else
+    top=top+1;
+    strr[top]=x;
+    
+     cout<<" "<<strr[top];
+ }
+ void display()
+ {
+     int i ;
+     for(i=top;i>-1;i--)
+     {
+         cout<<" "<<strr[i];
+     }
+ } 
+ void pop()
+ {
+    
+   if(top<0)
+   {
+       cout<<"stack underflow:";
+   }
+    strr[top]=strr[top-1];
+     top = top -1;
+ }
+ 
+int main()
+{
+    int strr[max],top = -1;
+     
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    
+    cout<<"\n--------\n-stack is: \n";  
+    display();
+    cout<<"\n--------\ntop element is poped from stack \n";
+    pop();
+    display();
+
+    return 0;
+}
